@@ -1,0 +1,225 @@
+/* =========================================================
+   COBRA FÁCIL - CLIENTES
+   Clientes.css
+   ========================================================= */
+
+/* RESUMEN */
+
+.clientes-resumen {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.clientes-resumen article {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 105px;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid #e8edf5;
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fbff 100%
+  );
+  box-shadow: 0 8px 24px rgba(22, 34, 62, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.clientes-resumen article:hover {
+  transform: translateY(-3px);
+  border-color: #d6e2f5;
+  box-shadow: 0 14px 32px rgba(22, 34, 62, 0.11);
+}
+
+.clientes-resumen article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #2563eb;
+}
+
+.clientes-resumen article:nth-child(2)::before {
+  background: #16a168;
+}
+
+.clientes-resumen article:nth-child(3)::before {
+  background: #e04a4a;
+}
+
+.clientes-resumen article:nth-child(4)::before {
+  background: #e69b17;
+}
+
+.clientes-resumen article > span {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #edf4ff;
+  font-size: 25px;
+}
+
+.clientes-resumen article:nth-child(2) > span {
+  background: #eaf8f1;
+}
+
+.clientes-resumen article:nth-child(3) > span {
+  background: #fff0f0;
+}
+
+.clientes-resumen article:nth-child(4) > span {
+  background: #fff6e5;
+}
+
+.clientes-resumen small,
+.clientes-resumen strong {
+  display: block;
+}
+
+.clientes-resumen small {
+  margin-bottom: 5px;
+  color: #667085;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.clientes-resumen strong {
+  color: #172033;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+}
+
+/* PANEL DE CLIENTES */
+
+.clientes-resumen + .panel {
+  overflow: hidden;
+  border: 1px solid #e7ecf3;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 9px 28px rgba(22, 34, 62, 0.055);
+}
+
+/* BUSCADOR */
+
+.clientes-resumen + .panel .toolbar {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.clientes-resumen + .panel .search {
+  min-height: 44px;
+  border: 1px solid #dce4ef;
+  border-radius: 12px;
+  background: #f9fbfe;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.clientes-resumen + .panel .search:focus {
+  outline: none;
+  border-color: #8eb3f5;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.09);
+}
+
+/* TABLA */
+
+.clientes-resumen + .panel table {
+  width: 100%;
+}
+
+.clientes-resumen + .panel thead th {
+  padding-top: 15px;
+  padding-bottom: 13px;
+  color: #667085;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+}
+
+.clientes-resumen + .panel tbody tr {
+  transition: background 0.18s ease;
+}
+
+.clientes-resumen + .panel tbody tr:hover {
+  background: #f8faff;
+}
+
+.clientes-resumen + .panel tbody td {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.clientes-resumen + .panel .link-button {
+  color: #172033;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.clientes-resumen + .panel .link-button:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* BOTONES EDITAR / ELIMINAR */
+
+.clientes-resumen + .panel .actions {
+  gap: 7px;
+}
+
+.clientes-resumen + .panel .actions button {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f7f9fc;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.clientes-resumen + .panel .actions button:hover {
+  transform: translateY(-2px);
+  border-color: #bfd0e8;
+  background: #edf4ff;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+  .clientes-resumen {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .clientes-resumen {
+    grid-template-columns: 1fr;
+  }
+
+  .clientes-resumen article {
+    min-height: 92px;
+  }
+}
