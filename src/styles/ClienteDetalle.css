@@ -1,0 +1,434 @@
+.cliente-ficha {
+  display: grid;
+  gap: 20px;
+}
+
+.print-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #15213d;
+}
+
+.print-identidad {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.print-logo {
+  display: grid;
+  place-items: center;
+  flex: 0 0 90px;
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  border: 1px solid #e1e6ee;
+  border-radius: 14px;
+  background: white;
+}
+
+.print-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  object-fit: contain;
+}
+
+.print-logo span {
+  font-size: 38px;
+}
+
+.print-brand {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.print-header p {
+  margin: 4px 0;
+  color: #667085;
+}
+
+.print-date {
+  color: #667085;
+  text-align: right;
+}
+
+.cliente-estado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 20px;
+  border-radius: 16px;
+}
+
+.cliente-estado > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cliente-estado span {
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.cliente-estado strong {
+  font-size: 27px;
+}
+
+.cliente-estado small {
+  text-align: right;
+}
+
+.cliente-estado.deuda {
+  border: 1px solid #f1c5c5;
+  background: #fff2f2;
+  color: #a82424;
+}
+
+.cliente-estado.al-dia {
+  border: 1px solid #bfe8ce;
+  background: #effbf4;
+  color: #15743d;
+}
+
+.cliente-encabezado {
+  display: grid;
+  grid-template-columns:
+    72px 1fr auto;
+  gap: 18px;
+  align-items: start;
+  padding: 20px;
+  border: 1px solid #e5eaf2;
+  border-radius: 18px;
+  background: white;
+}
+
+.cliente-avatar {
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  font-size: 31px;
+  font-weight: 900;
+}
+
+.cliente-datos h2 {
+  margin: 0 0 10px;
+  font-size: 28px;
+}
+
+.cliente-datos p {
+  margin: 6px 0;
+  color: #566176;
+}
+
+.cliente-acciones {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(145px, 1fr)
+    );
+  gap: 8px;
+}
+
+.cliente-resumen {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+  gap: 14px;
+}
+
+.cliente-resumen article {
+  display: grid;
+  gap: 6px;
+  padding: 18px;
+  border: 1px solid #e5eaf2;
+  border-radius: 15px;
+  background: white;
+}
+
+.cliente-resumen article > span {
+  font-size: 24px;
+}
+
+.cliente-resumen small {
+  color: #667085;
+}
+
+.cliente-resumen strong {
+  font-size: 21px;
+}
+
+.cliente-ultimos {
+  display: grid;
+  grid-template-columns:
+    repeat(2, 1fr);
+  gap: 14px;
+}
+
+.cliente-ultimos article {
+  display: grid;
+  gap: 5px;
+  padding: 17px;
+  border: 1px solid #e3e9f4;
+  border-radius: 14px;
+  background: #f5f8fe;
+}
+
+.cliente-ultimos span {
+  color: #667085;
+  font-weight: 700;
+}
+
+.cliente-ultimos strong {
+  font-size: 20px;
+}
+
+.cliente-ultimos small {
+  color: #2563eb;
+  font-weight: 800;
+}
+
+.historial-seccion {
+  padding: 20px;
+  border: 1px solid #e5eaf2;
+  border-radius: 18px;
+  background: white;
+}
+
+.historial-titulo {
+  display: flex;
+  justify-content:
+    space-between;
+  gap: 15px;
+  margin-bottom: 17px;
+}
+
+.historial-titulo h3 {
+  margin: 0 0 4px;
+}
+
+.historial-titulo p {
+  margin: 0;
+  color: #667085;
+}
+
+.historial-titulo > span {
+  color: #667085;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.historial-lista {
+  display: grid;
+  gap: 11px;
+}
+
+.historial-item {
+  display: grid;
+  grid-template-columns:
+    48px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-left: 5px solid;
+  border-radius: 14px;
+}
+
+.historial-item.compra {
+  border-color: #2563eb;
+  background: #f4f7ff;
+}
+
+.historial-item.pago {
+  border-color: #17864b;
+  background: #f1fbf5;
+}
+
+.historial-icono {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: white;
+  font-size: 21px;
+}
+
+.historial-contenido > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.historial-contenido span {
+  color: #667085;
+  font-size: 13px;
+}
+
+.historial-contenido p {
+  margin: 4px 0 0;
+  color: #566176;
+}
+
+.historial-contenido small {
+  display: block;
+  margin-top: 4px;
+  color: #7a8496;
+}
+
+.historial-monto {
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.historial-item.compra
+  .historial-monto {
+  color: #2563eb;
+}
+
+.historial-item.pago
+  .historial-monto {
+  color: #17864b;
+}
+
+.historial-vacio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 25px;
+  color: #667085;
+}
+
+.print-footer {
+  display: flex;
+  justify-content:
+    space-between;
+  gap: 15px;
+  padding-top: 16px;
+  border-top: 1px solid #dfe4ec;
+}
+
+@media (max-width: 950px) {
+  .cliente-encabezado {
+    grid-template-columns:
+      64px 1fr;
+  }
+
+  .cliente-acciones {
+    grid-column: 1 / -1;
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .cliente-resumen {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .print-header,
+  .print-identidad,
+  .cliente-estado,
+  .historial-titulo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .print-date {
+    text-align: left;
+  }
+
+  .cliente-estado {
+    display: flex;
+  }
+
+  .cliente-estado > div {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .cliente-estado small {
+    text-align: left;
+  }
+
+  .cliente-encabezado {
+    grid-template-columns: 1fr;
+  }
+
+  .cliente-avatar {
+    width: 58px;
+    height: 58px;
+  }
+
+  .cliente-acciones,
+  .cliente-resumen,
+  .cliente-ultimos {
+    grid-template-columns: 1fr;
+  }
+
+  .historial-item {
+    grid-template-columns:
+      45px 1fr;
+  }
+
+  .historial-monto {
+    grid-column: 2;
+  }
+
+  .print-footer {
+    flex-direction: column;
+  }
+}
+
+@media print {
+  .printable-cuenta-cliente {
+    width: 100%;
+    max-width: 180mm;
+    margin: 0 auto;
+  }
+
+  .print-logo {
+    width: 85px;
+    height: 85px;
+    border-color: #ccc;
+  }
+
+  .cliente-estado {
+    border: 2px solid #333;
+    background: white !important;
+    color: #111 !important;
+  }
+
+  .cliente-encabezado,
+  .cliente-resumen article,
+  .cliente-ultimos article {
+    box-shadow: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cliente-avatar {
+    background: #ddd;
+    color: #111;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}

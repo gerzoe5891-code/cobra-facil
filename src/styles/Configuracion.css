@@ -1,0 +1,335 @@
+.business-settings {
+  margin-bottom: 20px;
+}
+
+.business-form {
+  margin-top: 20px;
+}
+
+.logo-configuracion {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 22px;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #e3e8f0;
+  border-radius: 16px;
+  background: #f8faff;
+}
+
+.logo-vista-previa {
+  display: grid;
+  place-items: center;
+  width: 210px;
+  height: 160px;
+  overflow: hidden;
+  border: 2px dashed #cbd4e2;
+  border-radius: 15px;
+  background: white;
+}
+
+.logo-vista-previa img {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  object-fit: contain;
+}
+
+.logo-placeholder {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  color: #7a8496;
+}
+
+.logo-placeholder span {
+  font-size: 45px;
+}
+
+.logo-controles h3 {
+  margin: 0 0 7px;
+  color: #27344e;
+}
+
+.logo-controles p {
+  max-width: 480px;
+  margin: 0;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.logo-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 17px;
+}
+
+@media (max-width: 700px) {
+  .logo-configuracion {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-vista-previa {
+    width: 100%;
+  }
+
+  .logo-botones {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+/* =========================================
+   CONFIGURACIÓN - ESTILO COMERCIAL
+========================================= */
+
+.configuracion-page {
+  display: grid;
+  gap: 22px;
+}
+
+.config-resumen {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.config-resumen article {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 100px;
+  padding: 19px;
+  overflow: hidden;
+  border: 1px solid #e8edf5;
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fbff 100%
+    );
+  box-shadow:
+    0 8px 24px
+    rgba(22, 34, 62, 0.06);
+}
+
+.config-resumen article::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: #2563eb;
+}
+
+.config-resumen
+article:nth-child(2)::before {
+  background: #16a168;
+}
+
+.config-resumen
+article:nth-child(3)::before {
+  background: #e69b17;
+}
+
+.config-resumen
+article:nth-child(4)::before {
+  background: #7c3aed;
+}
+
+.config-resumen article > span {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: #edf4ff;
+  font-size: 23px;
+}
+
+.config-resumen
+article:nth-child(2) > span {
+  background: #eaf8f1;
+}
+
+.config-resumen
+article:nth-child(3) > span {
+  background: #fff6e5;
+}
+
+.config-resumen
+article:nth-child(4) > span {
+  background: #f3efff;
+}
+
+.config-resumen small,
+.config-resumen strong {
+  display: block;
+}
+
+.config-resumen small {
+  margin-bottom: 5px;
+  color: #667085;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.config-resumen strong {
+  color: #172033;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.config-backup-fecha {
+  font-size: 13px !important;
+}
+
+.business-settings {
+  overflow: hidden;
+}
+
+.config-seccion-titulo {
+  margin-top: 4px;
+}
+
+.config-seccion-titulo h2 {
+  margin: 4px 0 5px;
+  color: #172033;
+  font-size: 23px;
+}
+
+.config-seccion-titulo p:last-child {
+  margin: 0;
+  color: #667085;
+}
+
+.config-backup-card,
+.config-restore-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 285px;
+}
+
+.config-backup-card p,
+.config-restore-card p {
+  max-width: 420px;
+  color: #667085;
+  line-height: 1.5;
+}
+
+.config-advertencia {
+  margin-top: 15px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  background: #fff7e5;
+  color: #946200;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 1200px) {
+  .config-resumen {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .config-resumen {
+    grid-template-columns: 1fr;
+  }
+}/* ========================================
+   ACTUALIZACIONES
+======================================== */
+
+.update-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 28px 32px;
+  margin-top: 18px;
+}
+
+.update-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.update-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  background: #eef4ff;
+  font-size: 30px;
+}
+
+.update-info > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.update-info small {
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.update-info strong {
+  color: #0f172a;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.update-info p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.update-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.update-status {
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: #ecfdf5;
+  color: #047857;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.update-actions button {
+  min-height: 46px;
+  padding: 0 20px;
+}
+
+/* Adaptación para ventanas más angostas */
+
+@media (max-width: 850px) {
+  .update-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .update-actions {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}

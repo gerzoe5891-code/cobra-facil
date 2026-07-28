@@ -1,0 +1,196 @@
+/* =========================================================
+   COBRA FÁCIL - PEDIDOS
+   ========================================================= */
+
+.pedidos-resumen {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.pedidos-resumen article {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 105px;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid #e8edf5;
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fbff 100%
+  );
+  box-shadow:
+    0 8px 24px
+    rgba(22, 34, 62, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pedidos-resumen article:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 32px
+    rgba(22, 34, 62, 0.11);
+}
+
+.pedidos-resumen article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #2563eb;
+}
+
+.pedidos-resumen
+article:nth-child(2)::before {
+  background: #e69b17;
+}
+
+.pedidos-resumen
+article:nth-child(3)::before {
+  background: #16a168;
+}
+
+.pedidos-resumen
+article:nth-child(4)::before {
+  background: #7c3aed;
+}
+
+.pedidos-resumen article > span {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #edf4ff;
+  font-size: 25px;
+}
+
+.pedidos-resumen
+article:nth-child(2) > span {
+  background: #fff6e5;
+}
+
+.pedidos-resumen
+article:nth-child(3) > span {
+  background: #eaf8f1;
+}
+
+.pedidos-resumen
+article:nth-child(4) > span {
+  background: #f3efff;
+}
+
+.pedidos-resumen small,
+.pedidos-resumen strong {
+  display: block;
+}
+
+.pedidos-resumen small {
+  margin-bottom: 5px;
+  color: #667085;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pedidos-resumen strong {
+  color: #172033;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.pedidos-panel {
+  overflow: hidden;
+}
+
+.pedidos-panel .toolbar {
+  padding-bottom: 16px;
+  border-bottom:
+    1px solid #edf1f6;
+}
+
+.pedidos-panel .search {
+  min-height: 44px;
+  background: #f9fbfe;
+}
+
+.pedidos-panel .search:focus {
+  outline: none;
+  border-color: #8eb3f5;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 4px
+    rgba(37, 99, 235, 0.09);
+}
+
+.pedidos-contador {
+  color: #667085;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pedidos-panel thead th {
+  color: #667085;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+}
+
+.pedidos-panel tbody tr {
+  transition:
+    background 0.18s ease;
+}
+
+.pedidos-panel tbody tr:hover {
+  background: #f8faff;
+}
+
+.pedido-monto {
+  color: #172033;
+  font-weight: 900;
+}
+
+.pedidos-panel .actions button {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border:
+    1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f7f9fc;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.pedidos-panel
+.actions button:hover {
+  transform: translateY(-2px);
+  background: #edf4ff;
+}
+
+@media (max-width: 1200px) {
+  .pedidos-resumen {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .pedidos-resumen {
+    grid-template-columns: 1fr;
+  }
+}

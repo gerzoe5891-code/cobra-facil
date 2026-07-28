@@ -1,0 +1,183 @@
+.cobros-resumen {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.cobros-resumen article {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px;
+  border: 1px solid #e5eaf2;
+  border-radius: 14px;
+  background: white;
+}
+
+.cobros-resumen span {
+  font-size: 25px;
+}
+
+.cobros-resumen small,
+.cobros-resumen strong {
+  display: block;
+}
+
+.cobros-resumen small {
+  color: #667085;
+}
+
+.cobros-resumen strong {
+  margin-top: 3px;
+  font-size: 20px;
+}
+
+.cobros-toolbar {
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  min-width: 210px;
+  padding: 12px 14px;
+  border: 1px solid #d8deea;
+  border-radius: 12px;
+  background: white;
+}
+
+.cobros-lista {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.cobro-card {
+  display: grid;
+  grid-template-columns: 145px 1fr 1.4fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid #e5eaf2;
+  border-left: 6px solid;
+  border-radius: 15px;
+  background: white;
+}
+
+.cobro-card.urgente {
+  border-left-color: #d92d20;
+  background: #fff7f6;
+}
+
+.cobro-card.proximo {
+  border-left-color: #f79009;
+  background: #fffaf2;
+}
+
+.cobro-card.seguimiento {
+  border-left-color: #eaaa08;
+  background: #fffdf3;
+}
+
+.cobro-card.aldia {
+  border-left-color: #12b76a;
+  background: #f5fff9;
+}
+
+.cobro-card-prioridad {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cobro-card-prioridad span {
+  font-size: 22px;
+}
+
+.cobro-card-cliente h3 {
+  margin: 0 0 8px;
+}
+
+.cobro-card-cliente p {
+  margin: 4px 0;
+  color: #667085;
+}
+
+.cobro-card-datos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.cobro-card-datos div {
+  display: grid;
+  gap: 4px;
+}
+
+.cobro-card-datos small {
+  color: #667085;
+}
+
+.cobro-card-acciones {
+  display: grid;
+  gap: 8px;
+  min-width: 165px;
+}
+
+.whatsapp-small {
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: #dcf8e7;
+  color: #15743d;
+  font-weight: 800;
+}
+
+@media (max-width: 1100px) {
+  .cobro-card {
+    grid-template-columns: 135px 1fr;
+  }
+
+  .cobro-card-datos,
+  .cobro-card-acciones {
+    grid-column: 1 / -1;
+  }
+
+  .cobro-card-acciones {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .cobros-resumen {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cobro-card-datos {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .cobros-resumen,
+  .cobro-card-acciones {
+    grid-template-columns: 1fr;
+  }
+
+  .cobro-card {
+    grid-template-columns: 1fr;
+  }
+
+  .cobro-card-datos,
+  .cobro-card-acciones {
+    grid-column: auto;
+  }
+
+  .cobros-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+}

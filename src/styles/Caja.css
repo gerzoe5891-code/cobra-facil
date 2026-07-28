@@ -1,0 +1,510 @@
+.caja-page {
+  display: grid;
+  gap: 20px;
+}
+
+/* =========================
+   ENCABEZADO DE IMPRESIÓN
+========================= */
+
+.caja-print-header,
+.caja-print-footer {
+  display: none;
+}
+
+/* =========================
+   FILTRO DE FECHA
+========================= */
+
+.caja-filtros {
+  display: flex;
+  align-items: end;
+  gap: 14px;
+  padding: 18px 20px;
+}
+
+.caja-filtros label {
+  display: grid;
+  gap: 7px;
+  color: #475467;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.caja-filtros input {
+  min-width: 220px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #d8e0ea;
+  border-radius: 11px;
+  outline: none;
+  background: #f9fbfe;
+  color: #172033;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.caja-filtros input:focus {
+  border-color: #8eb3f5;
+  background: white;
+  box-shadow:
+    0 0 0 4px
+    rgba(37, 99, 235, 0.09);
+}
+
+/* =========================
+   TARJETAS PRINCIPALES
+========================= */
+
+.caja-resumen-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.caja-resumen-grid .stat-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 105px;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid #e8edf5;
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fbff 100%
+    );
+  box-shadow:
+    0 8px 24px
+    rgba(22, 34, 62, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.caja-resumen-grid .stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 32px
+    rgba(22, 34, 62, 0.11);
+}
+
+.caja-resumen-grid .stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #2563eb;
+}
+
+.caja-resumen-grid
+.stat-card:nth-child(2)::before {
+  background: #16a168;
+}
+
+.caja-resumen-grid
+.stat-card:nth-child(3)::before {
+  background: #e69b17;
+}
+
+.caja-resumen-grid
+.stat-card:nth-child(4)::before {
+  background: #7c3aed;
+}
+
+.caja-resumen-grid .stat-card > span {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #edf4ff;
+  font-size: 25px;
+}
+
+.caja-resumen-grid
+.stat-card:nth-child(2) > span {
+  background: #eaf8f1;
+}
+
+.caja-resumen-grid
+.stat-card:nth-child(3) > span {
+  background: #fff6e5;
+}
+
+.caja-resumen-grid
+.stat-card:nth-child(4) > span {
+  background: #f3efff;
+}
+
+.caja-resumen-grid .stat-card small,
+.caja-resumen-grid .stat-card strong {
+  display: block;
+}
+
+.caja-resumen-grid .stat-card small {
+  margin-bottom: 5px;
+  color: #667085;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.caja-resumen-grid .stat-card strong {
+  color: #172033;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+/* =========================
+   DOS COLUMNAS
+========================= */
+
+.caja-dos-columnas {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    minmax(300px, 0.7fr);
+  gap: 20px;
+}
+
+.caja-dos-columnas > .panel {
+  min-width: 0;
+}
+
+/* =========================
+   TÍTULOS DE PANELES
+========================= */
+
+.caja-page .panel-title {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.caja-page .panel-title h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 20px;
+}
+
+.caja-page .panel-title p {
+  margin: 5px 0 0;
+  color: #667085;
+  font-size: 13px;
+}
+
+/* =========================
+   MÉTODOS DE PAGO
+========================= */
+
+.metodos-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 16px;
+}
+
+.metodo-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  min-height: 65px;
+  padding: 14px 16px;
+  border: 1px solid #e5eaf2;
+  border-radius: 13px;
+  background: #f8faff;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.metodo-card:hover {
+  transform: translateY(-2px);
+  background: #f2f6fd;
+}
+
+.metodo-card span {
+  color: #667085;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.metodo-card strong {
+  color: #172033;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+/* Último método ocupa todo el ancho */
+
+.metodo-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+/* =========================
+   ACTIVIDAD
+========================= */
+
+.actividad-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.actividad-grid article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  padding: 15px 17px;
+  border: 1px solid #e5eaf2;
+  border-radius: 13px;
+  background: #f8faff;
+}
+
+.actividad-grid article span {
+  color: #475467;
+  font-weight: 700;
+}
+
+.actividad-grid article strong {
+  display: grid;
+  place-items: center;
+  min-width: 42px;
+  height: 42px;
+  padding: 0 10px;
+  border-radius: 12px;
+  background: #edf4ff;
+  color: #2563eb;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+/* =========================
+   MOVIMIENTOS
+========================= */
+
+.caja-movimientos {
+  overflow: hidden;
+}
+
+.caja-movimientos .panel-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.caja-movimientos .panel-title p {
+  margin: 0;
+  padding: 7px 11px;
+  border-radius: 9px;
+  background: #f3f6fb;
+  color: #667085;
+  font-weight: 700;
+}
+
+.caja-movimientos .table-wrap {
+  margin-top: 10px;
+}
+
+.caja-movimientos thead th {
+  color: #667085;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+}
+
+.caja-movimientos tbody tr {
+  transition: background 0.18s ease;
+}
+
+.caja-movimientos tbody tr:hover {
+  background: #f8faff;
+}
+
+.caja-movimientos
+.amount-success {
+  color: #168247;
+  font-weight: 900;
+}
+
+/* =========================
+   SIN MOVIMIENTOS
+========================= */
+
+.caja-movimientos .empty {
+  min-height: 180px;
+}
+
+.caja-movimientos .empty > div {
+  font-size: 35px;
+}
+
+.caja-movimientos .empty h3 {
+  margin-bottom: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1200px) {
+  .caja-resumen-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .caja-dos-columnas {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .caja-resumen-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .caja-filtros {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .caja-filtros input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .metodos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metodo-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  .caja-movimientos .panel-title {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   IMPRESIÓN
+========================= */
+
+@media print {
+  body {
+    background: white !important;
+  }
+
+  .sidebar,
+  .app-header,
+  .no-print {
+    display: none !important;
+  }
+
+  .layout,
+  .main-area,
+  .content {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .caja-page {
+    display: block;
+    color: #111827;
+  }
+
+  .caja-print-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #172033;
+  }
+
+  .caja-print-header h1 {
+    margin: 0 0 5px;
+    font-size: 25px;
+  }
+
+  .caja-print-header p {
+    margin: 3px 0;
+  }
+
+  .caja-print-header small {
+    display: block;
+    margin-top: 3px;
+  }
+
+  .caja-resumen-grid {
+    grid-template-columns:
+      repeat(4, 1fr);
+    margin-bottom: 18px;
+  }
+
+  .caja-resumen-grid .stat-card {
+    min-height: auto;
+    padding: 12px;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .caja-resumen-grid
+  .stat-card::before {
+    display: none;
+  }
+
+  .caja-resumen-grid
+  .stat-card > span {
+    width: auto;
+    height: auto;
+    background: transparent;
+  }
+
+  .caja-dos-columnas {
+    grid-template-columns:
+      1fr 1fr;
+    margin-bottom: 18px;
+  }
+
+  .panel {
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  .caja-movimientos {
+    margin-top: 18px;
+  }
+
+  .caja-movimientos table {
+    font-size: 11px;
+  }
+
+  .caja-print-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 25px;
+    padding-top: 14px;
+    border-top: 2px solid #172033;
+    font-size: 12px;
+  }
+}

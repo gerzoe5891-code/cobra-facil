@@ -1,0 +1,194 @@
+.morosos-page {
+  display: grid;
+  gap: 20px;
+}
+
+/* RESUMEN */
+
+.morosos-resumen {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.morosos-resumen article {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 105px;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid #e8edf5;
+  border-radius: 18px;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f8fbff 100%
+  );
+  box-shadow:
+    0 8px 24px
+    rgba(22, 34, 62, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.morosos-resumen article:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 14px 32px
+    rgba(22, 34, 62, 0.11);
+}
+
+.morosos-resumen article::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: #e04a4a;
+}
+
+.morosos-resumen
+article:nth-child(2)::before {
+  background: #c43232;
+}
+
+.morosos-resumen
+article:nth-child(3)::before {
+  background: #e69b17;
+}
+
+.morosos-resumen
+article:nth-child(4)::before {
+  background: #7c3aed;
+}
+
+.morosos-resumen article > span {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #fff0f0;
+  font-size: 25px;
+}
+
+.morosos-resumen
+article:nth-child(3) > span {
+  background: #fff6e5;
+}
+
+.morosos-resumen
+article:nth-child(4) > span {
+  background: #f3efff;
+}
+
+.morosos-resumen small,
+.morosos-resumen strong {
+  display: block;
+}
+
+.morosos-resumen small {
+  margin-bottom: 5px;
+  color: #667085;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.morosos-resumen strong {
+  color: #172033;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+/* PANEL */
+
+.morosos-panel {
+  overflow: hidden;
+}
+
+.morosos-panel .toolbar {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.morosos-panel .search {
+  min-height: 44px;
+  background: #f9fbfe;
+}
+
+.morosos-panel .search:focus {
+  outline: none;
+  border-color: #8eb3f5;
+  background: #ffffff;
+  box-shadow:
+    0 0 0 4px
+    rgba(37, 99, 235, 0.09);
+}
+
+.morosos-contador {
+  color: #667085;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* TABLA */
+
+.morosos-panel thead th {
+  color: #667085;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+}
+
+.morosos-panel tbody tr {
+  transition: background 0.18s ease;
+}
+
+.morosos-panel tbody tr:hover {
+  background: #fff9f9;
+}
+
+/* NIVEL */
+
+.moroso-nivel {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.moroso-medio {
+  background: #fff4cf;
+  color: #8c6700;
+}
+
+.moroso-alto {
+  background: #ffe7c2;
+  color: #a55800;
+}
+
+.moroso-critico {
+  background: #ffe1e1;
+  color: #a82424;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+  .morosos-resumen {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .morosos-resumen {
+    grid-template-columns: 1fr;
+  }
+}
