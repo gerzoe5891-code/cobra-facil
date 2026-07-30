@@ -45,6 +45,23 @@ export default function Configuracion({
       ) || ""
     );
 
+  const [
+    estadoActualizacion,
+    setEstadoActualizacion,
+  ] = useState("inicial");
+
+  const [
+    mensajeActualizacion,
+    setMensajeActualizacion,
+  ] = useState(
+    "Listo para buscar actualizaciones"
+  );
+
+  const [
+    versionDisponible,
+    setVersionDisponible,
+  ] = useState("");
+
   useEffect(() => {
     setFormulario({
       ...NEGOCIO_INICIAL,
@@ -90,12 +107,15 @@ export default function Configuracion({
     const datosActualizados = {
       ...formulario,
       nombre,
+
       telefono:
         formulario.telefono?.trim() ||
         "",
+
       ciudad:
         formulario.ciudad?.trim() ||
         "",
+
       instagram:
         formulario.instagram?.trim() ||
         "",
@@ -273,9 +293,10 @@ export default function Configuracion({
 
     lector.onload = () => {
       try {
-        const datos = JSON.parse(
-          lector.result
-        );
+        const datos =
+          JSON.parse(
+            lector.result
+          );
 
         storage.importarTodo(datos);
 
@@ -301,6 +322,130 @@ export default function Configuracion({
     lector.readAsText(archivo);
 
     evento.target.value = "";
+  }
+
+  async function buscarActualizaciones() {
+    if (
+      !window.cobraFacil
+        ?.buscarActualizaciones
+    ) {
+      setEstadoActualizacion(
+        "desarrollo"
+      );
+
+      setMensajeActualizacion(
+        "La búsqueda real se prueba desde Cobra Fácil instalado."
+      );
+
+      return;
+    }
+
+    try {
+      setEstadoActualizacion(
+        "buscando"
+      );
+
+      setMensajeActualizacion(
+        "Buscando actualizaciones..."
+      );
+
+      setVersionDisponible("");
+
+      const resultado =
+        await window.cobraFacil
+          .buscarActualizaciones();
+
+      if (!resultado?.ok) {
+        setEstadoActualizacion(
+          "error"
+        );
+
+        setMensajeActualizacion(
+          resultado?.mensaje ||
+            "No se pudo buscar actualizaciones."
+        );
+
+        return;
+      }
+
+      if (resultado.desarrollo) {
+        setEstadoActualizacion(
+          "desarrollo"
+        );
+
+        setMensajeActualizacion(
+          resultado.mensaje ||
+            "La búsqueda real funciona en la aplicación instalada."
+        );
+
+        return;
+      }
+
+      if (
+        resultado.hayActualizacion
+      ) {
+        setEstadoActualizacion(
+          "disponible"
+        );
+
+        setVersionDisponible(
+          resultado.versionDisponible ||
+            ""
+        );
+
+        setMensajeActualizacion(
+          `Nueva versión disponible: v${resultado.versionDisponible}`
+        );
+
+        return;
+      }
+
+      setEstadoActualizacion(
+        "actualizado"
+      );
+
+      setMensajeActualizacion(
+        `Cobra Fácil v${resultado.versionActual || APP.version} está actualizado.`
+      );
+    } catch (error) {
+      console.error(
+        "Error al buscar actualizaciones:",
+        error
+      );
+
+      setEstadoActualizacion(
+        "error"
+      );
+
+      setMensajeActualizacion(
+        error?.message ||
+          "No se pudo comprobar si hay actualizaciones."
+      );
+    }
+  }
+
+  function iconoActualizacion() {
+    switch (
+      estadoActualizacion
+    ) {
+      case "buscando":
+        return "🔎";
+
+      case "actualizado":
+        return "✅";
+
+      case "disponible":
+        return "⬆️";
+
+      case "error":
+        return "⚠️";
+
+      case "desarrollo":
+        return "💻";
+
+      default:
+        return "🔄";
+    }
   }
 
   return (
@@ -654,7 +799,8 @@ export default function Configuracion({
           </div>
         </article>
       </div>
-            <div className="config-seccion-titulo">
+
+      <div className="config-seccion-titulo">
         <div>
           <p className="eyebrow">
             Sistema
@@ -666,7 +812,7 @@ export default function Configuracion({
 
           <p>
             Consultá la versión instalada
-            y verificá futuras actualizaciones
+            y verificá nuevas versiones
             de Cobra Fácil.
           </p>
         </div>
@@ -675,7 +821,7 @@ export default function Configuracion({
       <div className="panel update-panel">
         <div className="update-info">
           <div className="update-icon">
-            🔄
+            {iconoActualizacion()}
           </div>
 
           <div>
@@ -690,24 +836,40 @@ export default function Configuracion({
             <p>
               Cobra Fácil Desktop
             </p>
+
+            {versionDisponible && (
+              <p>
+                Disponible:{" "}
+                <strong>
+                  v{versionDisponible}
+                </strong>
+              </p>
+            )}
           </div>
         </div>
 
         <div className="update-actions">
-          <span className="update-status">
-            ✅ Aplicación actualizada
+          <span
+            className={`update-status ${estadoActualizacion}`}
+          >
+            {mensajeActualizacion}
           </span>
 
           <button
             type="button"
             className="secondary"
-            onClick={() =>
-              alert(
-                `Tenés instalada la versión ${APP.version}. La búsqueda automática de actualizaciones estará disponible próximamente.`
-              )
+            onClick={
+              buscarActualizaciones
+            }
+            disabled={
+              estadoActualizacion ===
+              "buscando"
             }
           >
-            🔍 Buscar actualizaciones
+            {estadoActualizacion ===
+            "buscando"
+              ? "🔎 Buscando..."
+              : "🔍 Buscar actualizaciones"}
           </button>
         </div>
       </div>
